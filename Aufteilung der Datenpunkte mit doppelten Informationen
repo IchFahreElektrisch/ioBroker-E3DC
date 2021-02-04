@@ -1,0 +1,28 @@
+// Aufteilung der Datenpunkte mit doppelten Informationen
+
+// Aufteilung "Autarkie und Eigenverbrauch in Prozent"
+var id = 'modbus.0.holdingRegisters.40082_Autarkie_Eigenverbrauch';
+createState('adapterdatenpunkte.modbus.Autarkie');
+createState('adapterdatenpunkte.modbus.Eigenverbrauch');
+on(id, function (obj) {
+     setState('adapterdatenpunkte.modbus.Autarkie', (obj.state.val >> 8) & 0xFF, true);
+          setState('adapterdatenpunkte.modbus.Eigenverbrauch', obj.state.val & 0xFF, true);
+          });
+
+          // Aufteilung "Modbus Firmware Verwsion"
+          var id1 = 'modbus.0.holdingRegisters.40002_Modbus-Firmware';
+          createState('adapterdatenpunkte.modbus.MajorVersion');
+          createState('adapterdatenpunkte.modbus.MinorVersion');
+          on(id1, function (obj) {
+               setState('adapterdatenpunkte.modbus.MajorVersion', (obj.state.val >> 8) & 0xFF, true);
+                    setState('adapterdatenpunkte.modbus.MinorVersion', obj.state.val & 0xFF, true);
+                    });
+
+                    // EMS
+                    var id2 = 'modbus.0.holdingRegisters.40085_EMS_Status';
+                    createState('adapterdatenpunkte.modbus.Ladesperre');
+                    createState('adapterdatenpunkte.modbus.Entladesperre');
+                    on(id2, function (obj) {
+                         setState('adapterdatenpunkte.modbus.Ladesperre', (obj.state.val >> 1) & 0xFF, true);
+                              setState('adapterdatenpunkte.modbus.Entladesperre', (obj.state.val >> 2) & 0xFF, true);
+                              });
