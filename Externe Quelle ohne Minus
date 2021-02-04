@@ -1,0 +1,13 @@
+
+
+// Externe Quelle wird standardmäßig als Verbraucher mit vorangesteltem Minus angezeigt
+
+var externalSource = 'modbus.0.holdingRegisters.40076_Externe_Quelle';
+
+createState('e3dc.modbus.externeQuelle');
+
+on(externalSource, function (obj) {
+
+     setState('e3dc.modbus.externeQuelle', (obj.state.val * -1), true);
+
+});
