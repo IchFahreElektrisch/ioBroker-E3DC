@@ -1,11 +1,82 @@
-var Wert1, Wert2, tempValue;
-
-
-on({id: new RegExp('javascript\\.0\\.e3dc\\.modbus\\.externeQuelle' + "|" + 'modbus\\.0\\.holdingRegisters\\.40068_PV_Leistung'), change: "ne"}, function (obj) {
-    Wert1 = getState("javascript.0.e3dc.modbus.externeQuelle").val;
-  Wert2 = getState("modbus.0.holdingRegisters.40068_PV_Leistung").val;
-  tempValue = Wert1 + Wert2;
-  setState("0_userdata.0.TestE3DC"/*E3DC-Gesamt-Produktion*/, tempValue, true);
-});
-
-//JTNDeG1sJTIweG1sbnMlM0QlMjJodHRwcyUzQSUyRiUyRmRldmVsb3BlcnMuZ29vZ2xlLmNvbSUyRmJsb2NrbHklMkZ4bWwlMjIlM0UlM0N2YXJpYWJsZXMlM0UlM0N2YXJpYWJsZSUyMGlkJTNEJTIyJTNBX2JLSERETFYlN0NtWjkzQVVrJTNBODMlMjIlM0VXZXJ0MSUzQyUyRnZhcmlhYmxlJTNFJTNDdmFyaWFibGUlMjBpZCUzRCUyMjQlMjUlM0J2NUJ5KlJJSEEySlp3JTI0JTVEIUolMjIlM0VXZXJ0MiUzQyUyRnZhcmlhYmxlJTNFJTNDdmFyaWFibGUlMjBpZCUzRCUyMll0VCUzRlolN0QzWFFfJTVFancqX09vV1dvJTIyJTNFdGVtcFZhbHVlJTNDJTJGdmFyaWFibGUlM0UlM0MlMkZ2YXJpYWJsZXMlM0UlM0NibG9jayUyMHR5cGUlM0QlMjJvbl9leHQlMjIlMjBpZCUzRCUyMlAlNURndSUzQTh3JTYwWXF3amtiWEJtTEdwJTIyJTIweCUzRCUyMjYzJTIyJTIweSUzRCUyMjYzJTIyJTNFJTNDbXV0YXRpb24lMjB4bWxucyUzRCUyMmh0dHAlM0ElMkYlMkZ3d3cudzMub3JnJTJGMTk5OSUyRnhodG1sJTIyJTIwaXRlbXMlM0QlMjIyJTIyJTNFJTNDJTJGbXV0YXRpb24lM0UlM0NmaWVsZCUyMG5hbWUlM0QlMjJDT05ESVRJT04lMjIlM0VuZSUzQyUyRmZpZWxkJTNFJTNDZmllbGQlMjBuYW1lJTNEJTIyQUNLX0NPTkRJVElPTiUyMiUzRSUzQyUyRmZpZWxkJTNFJTNDdmFsdWUlMjBuYW1lJTNEJTIyT0lEMCUyMiUzRSUzQ3NoYWRvdyUyMHR5cGUlM0QlMjJmaWVsZF9vaWQlMjIlMjBpZCUzRCUyMm9qSy5lVmFCUWolNUR6YjZmTEhidiU3QiUyMiUzRSUzQ2ZpZWxkJTIwbmFtZSUzRCUyMm9pZCUyMiUzRWphdmFzY3JpcHQuMC5lM2RjLm1vZGJ1cy5leHRlcm5lUXVlbGxlJTNDJTJGZmllbGQlM0UlM0MlMkZzaGFkb3clM0UlM0MlMkZ2YWx1ZSUzRSUzQ3ZhbHVlJTIwbmFtZSUzRCUyMk9JRDElMjIlM0UlM0NzaGFkb3clMjB0eXBlJTNEJTIyZmllbGRfb2lkJTIyJTIwaWQlM0QlMjJLJTJCRiUyNHMlMkJuJTdCVSUyM3pXJTVEUkclNUVHdCUzQmUlMjIlM0UlM0NmaWVsZCUyMG5hbWUlM0QlMjJvaWQlMjIlM0Vtb2RidXMuMC5ob2xkaW5nUmVnaXN0ZXJzLjQwMDY4X1BWX0xlaXN0dW5nJTNDJTJGZmllbGQlM0UlM0MlMkZzaGFkb3clM0UlM0MlMkZ2YWx1ZSUzRSUzQ3N0YXRlbWVudCUyMG5hbWUlM0QlMjJTVEFURU1FTlQlMjIlM0UlM0NibG9jayUyMHR5cGUlM0QlMjJ2YXJpYWJsZXNfc2V0JTIyJTIwaWQlM0QlMjJXJTJCKjVYJTJCJTQwJTdDSVNZJTJDciUyNWdwWHkxNiUyMiUzRSUzQ2ZpZWxkJTIwbmFtZSUzRCUyMlZBUiUyMiUyMGlkJTNEJTIyJTNBX2JLSERETFYlN0NtWjkzQVVrJTNBODMlMjIlM0VXZXJ0MSUzQyUyRmZpZWxkJTNFJTNDdmFsdWUlMjBuYW1lJTNEJTIyVkFMVUUlMjIlM0UlM0NibG9jayUyMHR5cGUlM0QlMjJnZXRfdmFsdWUlMjIlMjBpZCUzRCUyMm4lN0QlMkM2ay1xRXUlMjUlNUVBJTNCfm0lMkZrJTI1JTdENyUyMiUzRSUzQ2ZpZWxkJTIwbmFtZSUzRCUyMkFUVFIlMjIlM0V2YWwlM0MlMkZmaWVsZCUzRSUzQ2ZpZWxkJTIwbmFtZSUzRCUyMk9JRCUyMiUzRWphdmFzY3JpcHQuMC5lM2RjLm1vZGJ1cy5leHRlcm5lUXVlbGxlJTNDJTJGZmllbGQlM0UlM0MlMkZibG9jayUzRSUzQyUyRnZhbHVlJTNFJTNDbmV4dCUzRSUzQ2Jsb2NrJTIwdHlwZSUzRCUyMnZhcmlhYmxlc19zZXQlMjIlMjBpZCUzRCUyMndUJTVCJTVFaDNnTDNQJTI1JTdEJTIzM3lhJTVCJTYwZHUlMjIlM0UlM0NmaWVsZCUyMG5hbWUlM0QlMjJWQVIlMjIlMjBpZCUzRCUyMjQlMjUlM0J2NUJ5KlJJSEEySlp3JTI0JTVEIUolMjIlM0VXZXJ0MiUzQyUyRmZpZWxkJTNFJTNDdmFsdWUlMjBuYW1lJTNEJTIyVkFMVUUlMjIlM0UlM0NibG9jayUyMHR5cGUlM0QlMjJnZXRfdmFsdWUlMjIlMjBpZCUzRCUyMlNVRVIlMjUlNjAlMjQoNlQlNjB+aSUyNDNhdyU3RExNJTIyJTNFJTNDZmllbGQlMjBuYW1lJTNEJTIyQVRUUiUyMiUzRXZhbCUzQyUyRmZpZWxkJTNFJTNDZmllbGQlMjBuYW1lJTNEJTIyT0lEJTIyJTNFbW9kYnVzLjAuaG9sZGluZ1JlZ2lzdGVycy40MDA2OF9QVl9MZWlzdHVuZyUzQyUyRmZpZWxkJTNFJTNDJTJGYmxvY2slM0UlM0MlMkZ2YWx1ZSUzRSUzQ25leHQlM0UlM0NibG9jayUyMHR5cGUlM0QlMjJ2YXJpYWJsZXNfc2V0JTIyJTIwaWQlM0QlMjJGJTNEalN3RChwSHpqSiUzRkQlN0RIcFQ4JTNGJTIyJTNFJTNDZmllbGQlMjBuYW1lJTNEJTIyVkFSJTIyJTIwaWQlM0QlMjJZdFQlM0ZaJTdEM1hRXyU1RWp3Kl9Pb1dXbyUyMiUzRXRlbXBWYWx1ZSUzQyUyRmZpZWxkJTNFJTNDdmFsdWUlMjBuYW1lJTNEJTIyVkFMVUUlMjIlM0UlM0NibG9jayUyMHR5cGUlM0QlMjJtYXRoX2FyaXRobWV0aWMlMjIlMjBpZCUzRCUyMilkMnhDaGwlN0RvUjU2akl5dyUyNWElMkJzJTIyJTNFJTNDZmllbGQlMjBuYW1lJTNEJTIyT1AlMjIlM0VBREQlM0MlMkZmaWVsZCUzRSUzQ3ZhbHVlJTIwbmFtZSUzRCUyMkElMjIlM0UlM0NzaGFkb3clMjB0eXBlJTNEJTIybWF0aF9udW1iZXIlMjIlMjBpZCUzRCUyMm0lMkYwcWFlOSU2MGtYQzAlMjUueSUyQiUzQmhsQyUyMiUzRSUzQ2ZpZWxkJTIwbmFtZSUzRCUyMk5VTSUyMiUzRTElM0MlMkZmaWVsZCUzRSUzQyUyRnNoYWRvdyUzRSUzQ2Jsb2NrJTIwdHlwZSUzRCUyMnZhcmlhYmxlc19nZXQlMjIlMjBpZCUzRCUyMnZUaCUyNG1PQ21jNS5wSTMlM0ZGTzl+KiUyMiUzRSUzQ2ZpZWxkJTIwbmFtZSUzRCUyMlZBUiUyMiUyMGlkJTNEJTIyJTNBX2JLSERETFYlN0NtWjkzQVVrJTNBODMlMjIlM0VXZXJ0MSUzQyUyRmZpZWxkJTNFJTNDJTJGYmxvY2slM0UlM0MlMkZ2YWx1ZSUzRSUzQ3ZhbHVlJTIwbmFtZSUzRCUyMkIlMjIlM0UlM0NzaGFkb3clMjB0eXBlJTNEJTIybWF0aF9udW1iZXIlMjIlMjBpZCUzRCUyMjMlMjN+cWVLc1haJTVFOEJCJTdCZCU3RG5pR2slMjIlM0UlM0NmaWVsZCUyMG5hbWUlM0QlMjJOVU0lMjIlM0UxJTNDJTJGZmllbGQlM0UlM0MlMkZzaGFkb3clM0UlM0NibG9jayUyMHR5cGUlM0QlMjJ2YXJpYWJsZXNfZ2V0JTIyJTIwaWQlM0QlMjJJJTJGLTY4bnQlMjU5LlUlMjQlM0J1OCUzQSUyNXF2SyUyMiUzRSUzQ2ZpZWxkJTIwbmFtZSUzRCUyMlZBUiUyMiUyMGlkJTNEJTIyNCUyNSUzQnY1QnkqUklIQTJKWnclMjQlNUQhSiUyMiUzRVdlcnQyJTNDJTJGZmllbGQlM0UlM0MlMkZibG9jayUzRSUzQyUyRnZhbHVlJTNFJTNDJTJGYmxvY2slM0UlM0MlMkZ2YWx1ZSUzRSUzQ25leHQlM0UlM0NibG9jayUyMHR5cGUlM0QlMjJ1cGRhdGUlMjIlMjBpZCUzRCUyMmdmRyUzRGlUZ35RRGY5T1MqMiU0MDMlNjBtJTIyJTNFJTNDbXV0YXRpb24lMjB4bWxucyUzRCUyMmh0dHAlM0ElMkYlMkZ3d3cudzMub3JnJTJGMTk5OSUyRnhodG1sJTIyJTIwZGVsYXlfaW5wdXQlM0QlMjJmYWxzZSUyMiUzRSUzQyUyRm11dGF0aW9uJTNFJTNDZmllbGQlMjBuYW1lJTNEJTIyT0lEJTIyJTNFMF91c2VyZGF0YS4wLlRlc3RFM0RDJTNDJTJGZmllbGQlM0UlM0NmaWVsZCUyMG5hbWUlM0QlMjJXSVRIX0RFTEFZJTIyJTNFRkFMU0UlM0MlMkZmaWVsZCUzRSUzQ3ZhbHVlJTIwbmFtZSUzRCUyMlZBTFVFJTIyJTNFJTNDYmxvY2slMjB0eXBlJTNEJTIydmFyaWFibGVzX2dldCUyMiUyMGlkJTNEJTIyJTYwZiUzQXN+JTI0VC5QYmxpMSU3RCUyNWxSTyh2JTIyJTNFJTNDZmllbGQlMjBuYW1lJTNEJTIyVkFSJTIyJTIwaWQlM0QlMjJZdFQlM0ZaJTdEM1hRXyU1RWp3Kl9Pb1dXbyUyMiUzRXRlbXBWYWx1ZSUzQyUyRmZpZWxkJTNFJTNDJTJGYmxvY2slM0UlM0MlMkZ2YWx1ZSUzRSUzQyUyRmJsb2NrJTNFJTNDJTJGbmV4dCUzRSUzQyUyRmJsb2NrJTNFJTNDJTJGbmV4dCUzRSUzQyUyRmJsb2NrJTNFJTNDJTJGbmV4dCUzRSUzQyUyRmJsb2NrJTNFJTNDJTJGc3RhdGVtZW50JTNFJTNDJTJGYmxvY2slM0UlM0MlMkZ4bWwlM0U=
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id=":_bKHDDLV|mZ93AUk:83">Wert1</variable>
+    <variable id="4%;v5By*RIHA2JZw$]!J">Wert2</variable>
+    <variable id="YtT?Z}3XQ_^jw*_OoWWo">tempValue</variable>
+  </variables>
+  <block type="on_ext" id="P]gu:8w`YqwjkbXBmLGp" x="63" y="63">
+    <mutation xmlns="http://www.w3.org/1999/xhtml" items="2"></mutation>
+    <field name="CONDITION">ne</field>
+    <field name="ACK_CONDITION"></field>
+    <value name="OID0">
+      <shadow type="field_oid" id="ojK.eVaBQj]zb6fLHbv{">
+        <field name="oid">javascript.0.e3dc.modbus.externeQuelle</field>
+      </shadow>
+    </value>
+    <value name="OID1">
+      <shadow type="field_oid" id="K+F$s+n{U#zW]RG^Gt;e">
+        <field name="oid">modbus.0.holdingRegisters.40068_PV_Leistung</field>
+      </shadow>
+    </value>
+    <statement name="STATEMENT">
+      <block type="variables_set" id="W+*5X+@|ISY,r%gpXy16">
+        <field name="VAR" id=":_bKHDDLV|mZ93AUk:83">Wert1</field>
+        <value name="VALUE">
+          <block type="get_value" id="n},6k-qEu%^A;~m/k%}7">
+            <field name="ATTR">val</field>
+            <field name="OID">javascript.0.e3dc.modbus.externeQuelle</field>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="wT[^h3gL3P%}#3ya[`du">
+            <field name="VAR" id="4%;v5By*RIHA2JZw$]!J">Wert2</field>
+            <value name="VALUE">
+              <block type="get_value" id="SUER%`$(6T`~i$3aw}LM">
+                <field name="ATTR">val</field>
+                <field name="OID">modbus.0.holdingRegisters.40068_PV_Leistung</field>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set" id="F=jSwD(pHzjJ?D}HpT8?">
+                <field name="VAR" id="YtT?Z}3XQ_^jw*_OoWWo">tempValue</field>
+                <value name="VALUE">
+                  <block type="math_arithmetic" id=")d2xChl}oR56jIyw%a+s">
+                    <field name="OP">ADD</field>
+                    <value name="A">
+                      <shadow type="math_number" id="m/0qae9`kXC0%.y+;hlC">
+                        <field name="NUM">1</field>
+                      </shadow>
+                      <block type="variables_get" id="vTh$mOCmc5.pI3?FO9~*">
+                        <field name="VAR" id=":_bKHDDLV|mZ93AUk:83">Wert1</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <shadow type="math_number" id="3#~qeKsXZ^8BB{d}niGk">
+                        <field name="NUM">1</field>
+                      </shadow>
+                      <block type="variables_get" id="I/-68nt%9.U$;u8:%qvK">
+                        <field name="VAR" id="4%;v5By*RIHA2JZw$]!J">Wert2</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="update" id="gfG=iTg~QDf9OS*2@3`m">
+                    <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+                    <field name="OID">0_userdata.0.TestE3DC</field>
+                    <field name="WITH_DELAY">FALSE</field>
+                    <value name="VALUE">
+                      <block type="variables_get" id="`f:s~$T.Pbli1}%lRO(v">
+                        <field name="VAR" id="YtT?Z}3XQ_^jw*_OoWWo">tempValue</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
