@@ -1,0 +1,26 @@
+deviceId	address	name	description	unit	type	len	factor	offset	role	room	poll	wp
+1	40002	Modbus_Firmware	Modbus-Firmware-Version		uint16be	1	1	0	value		true	false	
+1	40004	Hersteller	Hersteller		string	16	1	0	value		true	false	
+1	40020	Modell	Modell		string	16	1	0	value		true	false	
+1	40036	Seriennummer	Seriennummer		string	16	1	0	value		true	false	
+1	40052	Firmware	Firmware	Release	string	16	1	0	value		true	false	
+1	40068	PV_Leistung	Photovoltaik-Leistung in Watt	W	int32sw	2	1	0	value		true	false	
+1	40070	Batterie_Leistung	Batterie-Leistung in Watt	W	int32sw	2	1	0	value		true	false	
+1	40072	Hausverbrauch_Leistung	Hausverbrauchs-Leistung in Watt	W	int32sw	2	1	0	value		true	false	
+1	40074	Netz_Leistung	Leistung am Netzübergabepunkt	W	int32sw	2	1	0	value		true	false	
+1	40082	Autarkie_Eigenverbrauch	Autarkie und Eigenverbrauch		uint16be	1	1	0	value		true	false	
+1	40083	Batterie_SOC	Batterie-SOC in Prozent	%	uint16be	1	1	0	value		true	false	
+1	40084	Emergency_Power_Status	Emergency-Power Status		uint16be	1	1	0	value		true	false	
+1	40085	EMS_Status	EMS-Status		uint16be	1	1	0	value		true	false	
+1	40096	DC_String_1_Voltage	Spannung in Volt	V	uint16be	1	1	0	value		true	false	
+1	40097	DC_String_2_Voltage	Spannung in Volt	V	uint16be	1	1	0	value		true	false	
+1	40098	DC_String_3_Voltage	Spannung in Volt	V	uint16be	1	1	0	value		true	false	
+1	40099	DC_String_1_Current	Strom in Ampere	A	uint16be	1	1	0	value		true	false	
+1	40100	DC_String_2_Current	Strom in Ampere	A	uint16be	1	1	0	value		true	false	
+1	40101	DC_String_3_Current	Strom in Ampere	A	uint16be	1	1	0	value		true	false	
+1	40102	DC_String_1_Power	Leistung in Watt	W	uint16be	1	1	0	value		true	false	
+1	40103	DC_String_2_Power	Leistung in Watt	W	uint16be	1	1	0	value		true	false	
+1	40104	DC_String_3_Power	Leistung in Watt	W	uint16be	1	1	0	value		true	false	
+1	40078	Wallbox	Leistung der Wallbox	W	int32sw	2	1	0	value		true	false	
+1	40080	Wallbox_Solar	Solarleistung der Wallbox	W	int32sw	2	1	0	value		true	false	
+1	40076	Externe_Quelle	Leistung aller zusätzlichen Einspeiser in Watt	W	int32sw	2	1	0	value		true	false	
